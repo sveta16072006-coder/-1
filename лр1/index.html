@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# - Современный объектно-ориентированный язык программирования</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/csharp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1 class="main-title">Язык программирования C#</h1>
+            <p class="subtitle">От истории создания до современных возможностей</p>
+            <nav class="main-nav">
+                <a href="#top" class="nav-link">Наверх</a> |
+                <a href="#content" class="nav-link">Содержание</a> |
+                <a href="#history" class="nav-link">История</a> |
+                <a href="#overview" class="nav-link">Обзор</a> |
+                <a href="#examples" class="nav-link">Примеры</a> |
+                <a href="#resources" class="nav-link">Ресурсы</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="content" class="toc-section">
+                <h2>Содержание статьи</h2>
+                <ul class="toc-list">
+                    <li><a href="#history">История создания языка C#</a></li>
+                    <li><a href="#overview">Краткий обзор языка C#</a>
+                        <ul>
+                            <li><a href="#features">Ключевые особенности</a></li>
+                            <li><a href="#applications">Области применения</a></li>
+                            <li><a href="#platforms">Платформы и инструменты</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#examples">Примеры кода на C#</a>
+                        <ul>
+                            <li><a href="#hello-world">Простая программа</a></li>
+                            <li><a href="#classes">Классы и объекты</a></li>
+                            <li><a href="#async">Асинхронное программирование</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="history" class="content-section">
+                <h2>История создания языка C#</h2>
+                
+                <figure class="image-left">
+    <img src="https://urfu-2019.github.io/slides/first-semester/13-typescript/images/anders-hejlsberg.jpg" alt="Андерс Хейлсберг - создатель C#">
+    <figcaption>Андерс Хейлсберг - создатель C#</figcaption>
+</figure>
+                
+                <p>Язык программирования <strong>C#</strong> (произносится как "си шарп") был разработан компанией <em>Microsoft</em> в период с 1999 по 2002 год под руководством <strong>Андерса Хейлсберга</strong> и Скотта Вильтаумота. Основная цель создания языка — предоставить современный, простой в использовании, объектно-ориентированный язык для платформы <abbr title="Microsoft .NET Framework">.NET</abbr>.</p>
+                
+                <p>Название "C#" происходит от музыкального знака диез (♯), который указывает на повышение ноты на полтона. Это символизирует эволюцию языка C++ — "на полтона выше C++".</p>
+                
+                <div class="milestones">
+                    <h3>Основные вехи развития C#:</h3>
+                    <ol class="numbered-list">
+                        <li><time datetime="2000-06">Июнь 2000</time> — Первое публичное представление языка на конференции Professional Developers Conference</li>
+                        <li><time datetime="2002-01">Январь 2002</time> — Выпуск первой версии C# 1.0 вместе с Visual Studio .NET</li>
+                        <li><time datetime="2005-11">Ноябрь 2005</time> — C# 2.0 с добавлением обобщений (generics)</li>
+                        <li><time datetime="2007-11">Ноябрь 2007</time> — C# 3.0 с LINQ и лямбда-выражениями</li>
+                        <li><time datetime="2010-04">Апрель 2010</time> — C# 4.0 с динамической типизацией</li>
+                        <li><time datetime="2012-08">Август 2012</time> — C# 5.0 с async/await</li>
+                        <li><time datetime="2015-07">Июль 2015</time> — C# 6.0 с упрощенным синтаксисом</li>
+                        <li><time datetime="2017-03">Март 2017</time> — C# 7.0 с кортежами и сопоставлением с образцом</li>
+                        <li><time datetime="2019-09">Сентябрь 2019</time> — C# 8.0 с nullable reference types</li>
+                        <li><time datetime="2020-11">Ноябрь 2020</time> — C# 9.0 с записями (records)</li>
+                        <li><time datetime="2021-11">Ноябрь 2021</time> — C# 10.0 с улучшениями для минимальных API</li>
+                        <li><time datetime="2022-11">Ноябрь 2022</time> — C# 11.0 с raw string literals</li>
+                    </ol>
+                </div>
+                
+               <figure class="image-center">
+    <img src="https://app-404729.games.s3.yandex.net/404729/a1sqfwn73rjowcbrthqozlf0wyg7rtue/logo.png" alt="Логотип C#">
+    <figcaption>Официальный логотип языка C#</figcaption>
+</figure>
+            </section>
+
+            <section id="overview" class="content-section">
+                <h2>Краткий обзор языка C#</h2>
+                
+                <figure class="image-right">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/C-Sharp_Logo.svg/1067px-C-Sharp_Logo.svg.png" alt="Символ C#">
+                    <figcaption>Символ языка C#</figcaption>
+                </figure>
+                
+                <p>C# — это <mark>современный, объектно-ориентированный, типобезопасный язык программирования</mark>, который позволяет разработчикам создавать различные типы безопасных и надежных приложений, работающих на платформе .NET.</p>
+                
+                <div id="features" class="subsection">
+                    <h3>Ключевые особенности C#</h3>
+                    <ul class="standard-list">
+                        <li><span class="feature">Объектно-ориентированность</span> — полная поддержка ООП: инкапсуляция, наследование, полиморфизм</li>
+                        <li><span class="feature">Компонентно-ориентированный</span> — свойства, события, атрибуты</li>
+                        <li><span class="feature">Типобезопасность</span> — строгая проверка типов во время компиляции</li>
+                        <li><span class="feature">Автоматическое управление памятью</span> — сборка мусора (garbage collection)</li>
+                        <li><span class="feature">Универсальные типы (generics)</span> — повторно используемый типобезопасный код</li>
+                        <li><span class="feature">LINQ (Language Integrated Query)</span> — встроенный язык запросов</li>
+                        <li><span class="feature">Асинхронное программирование</span> — ключевые слова async/await</li>
+                        <li><span class="feature">Кроссплатформенность</span> — благодаря .NET Core и .NET 5+</li>
+                    </ul>
+                </div>
+                
+                <div id="applications" class="subsection">
+                    <h3>Области применения C#</h3>
+                    <ul class="icon-list">
+                        <li>Веб-приложения (ASP.NET Core)</li>
+                        <li>Десктопные приложения (Windows Forms, WPF)</li>
+                        <li>Мобильные приложения (Xamarin)</li>
+                        <li>Игры (Unity game engine)</li>
+                        <li>Микросервисы и облачные приложения</li>
+                        <li>Машинное обучение (ML.NET)</li>
+                        <li>Интернет вещей (IoT)</li>
+                    </ul>
+                </div>
+                
+                <div id="platforms" class="subsection">
+                    <h3>Платформы и инструменты</h3>
+                    
+                    <table class="features-table">
+                        <caption>Основные инструменты для разработки на C#</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Инструмент</th>
+                                <th scope="col">Тип</th>
+                                <th scope="col">Назначение</th>
+                                <th scope="col">Платформа</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Visual Studio</td>
+                                <td>IDE</td>
+                                <td>Полноценная среда разработки</td>
+                                <td>Windows, macOS</td>
+                            </tr>
+                            <tr>
+                                <td>Visual Studio Code</td>
+                                <td>Редактор кода</td>
+                                <td>Легковесный редактор с поддержкой C#</td>
+                                <td>Windows, macOS, Linux</td>
+                            </tr>
+                            <tr>
+                                <td>JetBrains Rider</td>
+                                <td>IDE</td>
+                                <td>Кроссплатформенная среда разработки</td>
+                                <td>Windows, macOS, Linux</td>
+                            </tr>
+                            <tr>
+                                <td>.NET CLI</td>
+                                <td>Командная строка</td>
+                                <td>Инструменты командной строки .NET</td>
+                                <td>Windows, macOS, Linux</td>
+                            </tr>
+                            <tr>
+                                <td>Unity</td>
+                                <td>Игровой движок</td>
+                                <td>Разработка игр на C#</td>
+                                <td>Windows, macOS</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">* C# поддерживается на всех современных платформах</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section id="examples" class="content-section">
+                <h2>Примеры кода на C#</h2>
+                
+                <p>Ниже представлены различные примеры кода на C# с подсветкой синтаксиса, демонстрирующие основные возможности языка.</p>
+                
+                <article id="hello-world" class="code-example">
+                    <h3>1. Простая программа "Hello, World!"</h3>
+                    <p>Традиционная первая программа на любом языке программирования:</p>
+                    
+                    <pre><code class="language-csharp">using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Вывод текста в консоль
+            Console.WriteLine("Hello, World!");
+            
+            // Ожидание нажатия клавиши
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
+            Console.ReadKey();
+        }
+    }
+}</code></pre>
+                    
+                    <p>Этот код создает простую консольную программу, которая выводит текст в консоль.</p>
+                </article>
+                
+                <article id="classes" class="code-example">
+                    <h3>2. Классы и объекты в C#</h3>
+                    <p>Пример определения класса, создания объектов и работы с ними:</p>
+                    
+                    <pre><code class="language-csharp">using System;
+
+namespace OOPExample
+{
+    // Базовый класс
+    public class Person
+    {
+        // Поля (fields)
+        private string name;
+        private int age;
+        
+        // Свойства (properties)
+        public string Name 
+        { 
+            get { return name; }
+            set { name = value; }
+        }
+        
+        public int Age
+        {
+            get { return age; }
+            set 
+            { 
+                if (value >= 0) 
+                    age = value; 
+            }
+        }
+        
+        // Конструктор
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        
+        // Метод
+        public virtual void DisplayInfo()
+        {
+            Console.WriteLine($"Имя: {Name}, Возраст: {Age}");
+        }
+    }
+    
+    // Производный класс
+    public class Employee : Person
+    {
+        public string Position { get; set; }
+        
+        public Employee(string name, int age, string position) 
+            : base(name, age)
+        {
+            Position = position;
+        }
+        
+        // Переопределение метода
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine($"Должность: {Position}");
+        }
+    }
+    
+    class Program
+    {
+        static void Main()
+        {
+            // Создание объектов
+            Person person = new Person("Иван", 30);
+            Employee employee = new Employee("Анна", 25, "Разработчик");
+            
+            // Вызов методов
+            person.DisplayInfo();
+            employee.DisplayInfo();
+        }
+    }
+}</code></pre>
+                </article>
+                
+                <article id="async" class="code-example">
+                    <h3>3. Асинхронное программирование</h3>
+                    <p>Пример использования async/await для асинхронных операций:</p>
+                    
+                    <pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace AsyncExample
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Console.WriteLine("Начало загрузки данных...");
+            
+            try
+            {
+                string data = await DownloadDataAsync("https://api.example.com/data");
+                Console.WriteLine($"Данные загружены. Длина: {data.Length} символов");
+                Console.WriteLine($"Первые 100 символов: {data.Substring(0, Math.Min(100, data.Length))}...");
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Ошибка при загрузке данных: {ex.Message}");
+            }
+            
+            Console.WriteLine("Программа завершена.");
+        }
+        
+        static async Task<string> DownloadDataAsync(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Установка таймаута
+                client.Timeout = TimeSpan.FromSeconds(30);
+                
+                // Асинхронная загрузка данных
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                
+                return await response.Content.ReadAsStringAsync();
+            }
+        }
+    }
+}</code></pre>
+                    
+                    <div class="code-explanation">
+                        <h4>Пояснение к примеру:</h4>
+                        <ul>
+                            <li><code>async</code> — указывает, что метод является асинхронным</li>
+                            <li><code>await</code> — приостанавливает выполнение метода до завершения асинхронной операции</li>
+                            <li><code>Task</code> и <code>Task&lt;T&gt;</code> — представляют асинхронные операции</li>
+                            <li>Асинхронные методы не блокируют основной поток выполнения</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section id="resources" class="content-section">
+                <h2>Дополнительные ресурсы</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>Официальная документация</h3>
+                        <p>Полная документация по C# и .NET от Microsoft:</p>
+                        <p><a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer" class="external-link">Документация C#</a></p>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Учебные материалы</h3>
+                        <p>Бесплатные курсы и руководства:</p>
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/dotnet/csharp/tour-of-csharp/" target="_blank">Tour of C#</a></li>
+                            <li><a href="https://metanit.com/sharp/" target="_blank">Учебник на Metanit</a></li>
+                            <li><a href="https://csharp.net-tutorials.com/" target="_blank">C# .NET Tutorials</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Сообщество</h3>
+                        <p>Полезные ресурсы для разработчиков C#:</p>
+                        <ul>
+                            <li><a href="https://stackoverflow.com/questions/tagged/c%23" target="_blank">Stack Overflow</a></li>
+                            <li><a href="https://www.reddit.com/r/csharp/" target="_blank">Reddit /r/csharp</a></li>
+                            <li><a href="https://github.com/dotnet/csharp" target="_blank">GitHub репозиторий</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="download-section">
+                    <h3>Скачать .NET SDK</h3>
+                    <p>Для начала программирования на C# необходимо установить .NET SDK:</p>
+                    <p>
+                        <a href="https://dotnet.microsoft.com/download" target="_blank" class="download-button">
+                            Скачать .NET SDK
+                        </a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="tags-summary">
+                    <h3>Использованные HTML-теги (более 30):</h3>
+                    <div class="tags-container">
+                        <span class="html-tag">&lt;html&gt;</span>
+                        <span class="html-tag">&lt;head&gt;</span>
+                        <span class="html-tag">&lt;meta&gt;</span>
+                        <span class="html-tag">&lt;title&gt;</span>
+                        <span class="html-tag">&lt;link&gt;</span>
+                        <span class="html-tag">&lt;script&gt;</span>
+                        <span class="html-tag">&lt;body&gt;</span>
+                        <span class="html-tag">&lt;div&gt;</span>
+                        <span class="html-tag">&lt;header&gt;</span>
+                        <span class="html-tag">&lt;h1&gt;</span>
+                        <span class="html-tag">&lt;h2&gt;</span>
+                        <span class="html-tag">&lt;h3&gt;</span>
+                        <span class="html-tag">&lt;h4&gt;</span>
+                        <span class="html-tag">&lt;p&gt;</span>
+                        <span class="html-tag">&lt;nav&gt;</span>
+                        <span class="html-tag">&lt;a&gt;</span>
+                        <span class="html-tag">&lt;main&gt;</span>
+                        <span class="html-tag">&lt;section&gt;</span>
+                        <span class="html-tag">&lt;ul&gt;</span>
+                        <span class="html-tag">&lt;ol&gt;</span>
+                        <span class="html-tag">&lt;li&gt;</span>
+                        <span class="html-tag">&lt;figure&gt;</span>
+                        <span class="html-tag">&lt;img&gt;</span>
+                        <span class="html-tag">&lt;figcaption&gt;</span>
+                        <span class="html-tag">&lt;strong&gt;</span>
+                        <span class="html-tag">&lt;em&gt;</span>
+                        <span class="html-tag">&lt;abbr&gt;</span>
+                        <span class="html-tag">&lt;time&gt;</span>
+                        <span class="html-tag">&lt;mark&gt;</span>
+                        <span class="html-tag">&lt;span&gt;</span>
+                        <span class="html-tag">&lt;table&gt;</span>
+                        <span class="html-tag">&lt;thead&gt;</span>
+                        <span class="html-tag">&lt;tbody&gt;</span>
+                        <span class="html-tag">&lt;tfoot&gt;</span>
+                        <span class="html-tag">&lt;tr&gt;</span>
+                        <span class="html-tag">&lt;th&gt;</span>
+                        <span class="html-tag">&lt;td&gt;</span>
+                        <span class="html-tag">&lt;caption&gt;</span>
+                        <span class="html-tag">&lt;article&gt;</span>
+                        <span class="html-tag">&lt;pre&gt;</span>
+                        <span class="html-tag">&lt;code&gt;</span>
+                        <span class="html-tag">&lt;footer&gt;</span>
+                    </div>
+                </div>
+                
+                <div class="css-summary">
+                    <h3>Использованные CSS-свойства (более 40):</h3>
+                    <div class="css-container">
+                        <span class="css-prop">font-family</span>
+                        <span class="css-prop">font-size</span>
+                        <span class="css-prop">font-weight</span>
+                        <span class="css-prop">line-height</span>
+                        <span class="css-prop">color</span>
+                        <span class="css-prop">background-color</span>
+                        <span class="css-prop">margin</span>
+                        <span class="css-prop">padding</span>
+                        <span class="css-prop">border</span>
+                        <span class="css-prop">border-radius</span>
+                        <span class="css-prop">width</span>
+                        <span class="css-prop">max-width</span>
+                        <span class="css-prop">height</span>
+                        <span class="css-prop">display</span>
+                        <span class="css-prop">flex-direction</span>
+                        <span class="css-prop">justify-content</span>
+                        <span class="css-prop">align-items</span>
+                        <span class="css-prop">grid-template-columns</span>
+                        <span class="css-prop">gap</span>
+                        <span class="css-prop">position</span>
+                        <span class="css-prop">top</span>
+                        <span class="css-prop">left</span>
+                        <span class="css-prop">float</span>
+                        <span class="css-prop">clear</span>
+                        <span class="css-prop">text-align</span>
+                        <span class="css-prop">text-decoration</span>
+                        <span class="css-prop">text-transform</span>
+                        <span class="css-prop">box-shadow</span>
+                        <span class="css-prop">box-sizing</span>
+                        <span class="css-prop">transition</span>
+                        <span class="css-prop">transform</span>
+                        <span class="css-prop">opacity</span>
+                        <span class="css-prop">z-index</span>
+                        <span class="css-prop">overflow</span>
+                        <span class="css-prop">overflow-x</span>
+                        <span class="css-prop">cursor</span>
+                        <span class="css-prop">list-style-type</span>
+                        <span class="css-prop">list-style-image</span>
+                        <span class="css-prop">background-image</span>
+                        <span class="css-prop">background-size</span>
+                        <span class="css-prop">background-position</span>
+                        <span class="css-prop">object-fit</span>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <p>Статья подготовлена в рамках учебного задания по HTML и CSS.</p>
+                    <p>Информация взята из открытых источников.</p>
+                    <p>Последнее обновление: <time datetime="2024-01-15">15 января 2025 года</time></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
